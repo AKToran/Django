@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>DTL</title>
+</head>
+<body>
+    <h1>This is CON_TEXT home page...........</h1>
+    <h1> ..........Template Filtering.........</h1>
+    <h2> Author: {{author}} </h2>
+    <h2> Age: {{age}} </h2>
+    <h2> {{l}} </h2>
+
+    {% comment %} *conditional statement {% endcomment %}
+    {% if age > 50 %}
+        <h3>You are too old</h3>
+    {% elif age > 20 and age < 49 %}
+        <h3> Prime age </h3>
+    {% else %}
+        <h3> You are a Child </h3>
+    {% endif %}
+    
+
+    {% comment %} * for loop {% endcomment %}
+    {% for i in courses %}
+    <h3> {{i.id}} {{i.name}} {{i.fee}} </h3>
+    {% endfor %}
+
+    {% comment %} * join filter {% endcomment %}
+    <h3> {{ l | join:" "}}</h3>
+
+    {% comment %} cut filter {% endcomment %}
+    <h3> {{ "abi dul ka bir" | cut:" "}}</h3>
+    {% comment %}* join: erpor space dile ( " er age) error ashe! {% endcomment %}
+
+    {% comment %} date filter {% endcomment %}
+    <h3> {{ date | date:"D d M Y"}}</h3>
+    <h3> {{ date | date:"d m y"}}</h3>
+
+    {% comment %} default value on empty {% endcomment %}
+    <h3> {{ val | default:"no value provided!"}}</h3>
+
+    {% comment %} *length filter {% endcomment %}
+    <h3> {{ courses | length }}</h3>
+
+    {% comment %} * slice filter {% endcomment %}
+    <h3> {{ l | slice:":2" | join:" "}}</h3>
+
+
+    {% comment %}* time since {% endcomment %}
+    <h3> {{ date | timesince }}</h3>
+
+    {% comment %} * truncatechars {% endcomment %}
+    <h3> {{ "coding is the future" | truncatechars:10 }}</h3>
+    <h3> {{ "coding is the future" | truncatewords:3 }}</h3>
+
+
+
+</body>
+</html>
