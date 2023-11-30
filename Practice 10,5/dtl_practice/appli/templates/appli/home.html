@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is Appli home page..</h1>
+
+    <h1> {{intro}} </h1>
+    <h2>course teachers:</h2>
+    {% for i in courses %}
+    <h1> {{i.mentor}} </h1>
+    {% endfor %}
+
+    <h2>{{ age | add:"7"}}</h2>
+
+    <h2>{{ intro | capfirst }}</h2>
+
+    <h2>[{{ name | center:"15" }}]</h2>
+
+    <h2>{{ intro | cut:" " }}</h2>
+
+    <h2>{{ null | default:"nothing is here" }}</h2>
+
+    <h2>{{ courses | dictsort:"mentor" }}</h2>
+
+    <h2>{{ age | divisibleby:"3" }}</h2>
+
+    <h2>{{ size | filesizeformat }}</h2>
+
+    <h2>{{ courses | first }}</h2>
+    <h2>{{ courses | last }}</h2>
+    <h2>{{ courses | random }}</h2>
+
+    <h2>{{ li | join:"+" }}</h2>
+
+    <h2>{{ intro | make_list }}</h2>
+
+    <h2>{{ intro | title }}</h2>
+    <h2>{{ intro | upper }}</h2>
+    <h2>{{ intro | wordcount }}</h2>
+
+
+    <h2> {{ "coding is the future for us" | truncatechars:10 }}</h2>
+    <h2> {{ "coding is the future for us" | truncatewords:4 }}</h2>
+
+
+
+</body>
+</html>
