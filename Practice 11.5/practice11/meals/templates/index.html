@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>Welcome to meals.</h1>
+        <h1><a href="{% url "home" %}"> Home </a></h1>
+        <h2>All available meals:</h2>
+
+
+        <div class="row m-5 mt-0 p-3 gap-3">
+
+            {% for i in data %}
+        
+
+            <div class="card col-3 p-2 shadow-lg" style="width: 18rem;">
+                <img src="{{i.strMealThumb}}" class="card-img-top" alt="meal image">
+                <div class="card-body ">
+                <h5 class="card-title"> {{i.strMeal}} </h5>
+                <p class="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt iste et modi voluptates placeat fuga eaque! Perferendis et quos quod. </p>
+                </div>
+            </div>
+
+
+
+        {% endfor %}
+
+
+        </div>
+
+        
+{% endblock content %}
+    
