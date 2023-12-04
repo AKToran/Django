@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="w-50 p-5 m-5 mt-0">
+  <h3>Movie rating Form</h3>
+  {% comment %} <form method="get"> {% endcomment %}
+  <form method="POST" action="/about/">
+    {% comment %} * <form method = 'post' action="{% url "about" %}"> action ta
+    url e giye hit kortese {% endcomment %} {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        aria-describedby="nameHelp"
+        name="username"
+        {% comment %} required {% endcomment %}
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="email"
+      />
+    </div>
+
+    <select class="form-select mb-3" aria-label="Default select example" name="select">
+        <option selected>Rating:</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+      </select>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>  
+</div>
+{% endblock content %}
